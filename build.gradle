@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'io.freefair.lombok' version '5.0.0-rc2'
 }
 
 group 'ru-netology'
@@ -17,6 +18,8 @@ repositories {
 dependencies {
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.6.0'
     testImplementation 'com.codeborne:selenide:5.3.1'
+    testImplementation 'mysql:mysql-connector-java:8.0.18'
+    testImplementation 'commons-dbutils:commons-dbutils:1.7'
 }
 
 test {
