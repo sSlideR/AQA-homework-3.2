@@ -1,5 +1,6 @@
 package LoginProccess;
 
+import LoginProccess.DBElements.DataBase;
 import com.codeborne.selenide.SelenideElement;
 
 import java.sql.SQLException;
@@ -11,7 +12,7 @@ public class VerificationPage {
     private SelenideElement moveOnButton = $("button[data-test-id='action-verify']");
 
     public UserPage validVerificationCode(DataHelper.AuthInfo info) throws SQLException {
-        verificationCodeField.setValue(DataHelper.VerificationCode.getVerificationCodeFromDB(info));
+        verificationCodeField.setValue(DataBase.getVerificationCodeFromDB(info));
         moveOnButton.click();
         return new UserPage();
     }
